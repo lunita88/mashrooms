@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8em;
+}
+
+#searchInput {
+  background-image: url('searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.img-thumb {
+    vertical-align: middle;
+    width: 30px;
+    height: 34px;
+}
+</style>
+</head>
+<body>
+<!--search box for names mashrooms -->
+<input type="text" id="searchInput" onkeyup="filterMashrooms()" placeholder="Nađi gljivu.." title="Type in a name">
+<!-- is text,pics. and everithing about mash. -->
+<ul id="myUL">
+  <li><a href="gljiva-template.html?biserovka"><img class="img-thumb" src="slike/biserovka-thumbnail.jpg" /> Biserovka </a></li>
+  <li><a href="gljiva-template.html?praviSmrcak"><img class="img-thumb" src="slike/praviSmrcak-thumbnail.jpg" /> Pravi Smrcak </a></li>
+  <li><a href="gljiva-template.html?ljutaMlecnica"><img class="img-thumb" src="slike/ljutaMlecnica-thumbnail.jpg" /> Ljuta Mlecnica</a></li>
+  <li><a href="gljiva-template.html?prosenjak"><img class="img-thumb" src="slike/prosenjak-thumbnail.jpg" /> Prosenjak</a></li>
+  <li><a href="gljiva-template.html?velikaSuncanica"><img class="img-thumb" src="slike/velikaSuncanica-thumbnail.jpg" /> Velika suncanica</a></li>
+  <li><a href="gljiva-template.html?rujnica"><img class="img-thumb" src="slike/Rujnica-thumbnail.jpg" /> Rujnica</a></li>
+  <li><a href="gljiva-template.html?carskaBlagva"><img class="img-thumb" src="slike/carskaBlagva-thumbnail.jpg" /> Carska Blagva </a></li>
+  <li><a href="gljiva-template.html?vrganj"><img class="img-thumb" src="slike/vrganj-thumbnail.jpg" /> Vrganj</a></li>
+  <li><a href="gljiva-template.html?lisicarka"><img class="img-thumb" src="slike/lisicarka-thumbnail.jpg" /> Lisicarka</a></li>
+  <li><a href="gljiva-template.html?crnaTruba"><img class="img-thumb" src="slike/crnaTrubaca-thumbnail.jpg" /> Crna Trubaca</a></li>
+  <li><a href="gljiva-template.html?pisanaNoznicarka"><img class="img-thumb" src="slike/pisanaNoznicarka-thumbnail.jpg" /> Pisana noznicarka</a></li>
+  <li><a href="gljiva-template.html?tikvastaPuhara"><img class="img-thumb" src="slike/tikvastaPuhara-thumbnail.jpg" /> Tikvasta puhara</a></li>
+  <li><a href="gljiva-template.html?trbusastaPuhara"><img class="img-thumb" src="slike/trbusastaPuhara-thumbnail.jpg" /> Trbusasta puhara </a></li>
+  <li><a href="gljiva-template.html?ranaLivadarka"><img class="img-thumb" src="slike/ranaLivadarka-thumbnail.jpg" /> Rana livadarka</a></li>
+  <li><a href="gljiva-template.html?aromaticnaPanjevcica"><img class="img-thumb" src="slike/aromaticnaPanjevcica-thumbnail.jpg" /> Aromaticna panjevcica</a></li>
+  <li><a href="gljiva-template.html?bukovaca"><img class="img-thumb" src="slike/bukovaca-thumbnail.jpg" /> Bukovaca </a></li>
+  <li><a href="gljiva-template.html?zlataca"><img class="img-thumb" src="slike/zlataca-thumbnail.jpg" /> Zlataca </a></li>
+  <li><a href="gljiva-template.html?jelenovoUho"><img class="img-thumb" src="slike/jelenovoUho-thumbnail.jpg" /> Jelenovo uho</a></li>
+  <li><a href="gljiva-template.html?maglen"><img class="img-thumb" src="slike/maglen-thumbnail.jpg" /> Maglen </a></li>
+  <li><a href="gljiva-template.html?martincica"><img class="img-thumb" src="slike/martincica-thumbnail.jpg" /> Martincica</a></li>
+  <li><a href="gljiva-template.html?puza"><img class="img-thumb" src="slike/puza-thumbnail.jpg" /> Puza </a></li>
+  <li><a href="gljiva-template.html?panterovaMuhara"><img class="img-thumb" src="slike/otrovna-thumbnail.jpg" /> Panterova Muhara</a></li>
+  <li><a href="gljiva-template.html?zelenaPupavka"><img class="img-thumb" src="slike/otrovna-thumbnail.jpg" /> Zelena pupavka</a></li>
+  <li><a href="gljiva-template.html?ludara"><img class="img-thumb" src="slike/otrovna-thumbnail.jpg" /> Ludara </a></li>
+  <li><a href="gljiva-template.html?haringaca"><img class="img-thumb" src="slike/otrovna-thumbnail.jpg" /> Haringaca</a></li>
+  <li><a href="gljiva-template.html?sumporaca"><img class="img-thumb" src="slike/otrovna-thumbnail.jpg" /> Sumporaca </a></li>
+  <li><a href="gljiva-template.html?smrdljiviStrsak"><img class="img-thumb" src="slike/smrdljiviStrsak-thumbnail.jpg" /> Smrdljivi strsak </a></li>
+  <li><a href="gljiva-template.html?hrastovaSjajnica"><img class="img-thumb" src="slike/hrastovaSjajnica-thumbnail.jpg" /> Hrastova Sjajnica </a></li>
+  <li><a href="gljiva-template.html?svijetlozutaMuhara"><img class="img-thumb" src="slike/svijetlozutaMuhara-thumbnail.jpg" /> Svijetlozuta Muhara </a></li>
+  <li><a href="gljiva-template.html?judinoUho"><img class="img-thumb" src="slike/judinoUho-thumbnail.jpg" /> Judino uho </a></li>
+  <li><a href="gljiva-template.html?djurdjevaca"><img class="img-thumb" src="slike/djurdjevaca-thumbnail.jpg" /> Đurđevača </a></li>
+  <li><a href="gljiva-template.html?borovnjaca"><img class="img-thumb" src="slike/borovnjaca-thumbnail.jpg" /> Borovnjača </a></li>
+  <li><a href="gljiva-template.html?sampinjon"><img class="img-thumb" src="slike/sampinjon-thumbnail.jpg" /> Šampinjon </a></li>
+  <li><a href="gljiva-template.html?grabovVrganj"><img class="img-thumb" src="slike/grabovVrganj-thumbnail.jpg" /> Grabov Vrganj </a></li>
+  <li><a href="gljiva-template.html?golubaca"><img class="img-thumb" src="slike/golubaca-thumbnail.jpg" /> Golubača </a></li>
+  <li><a href="gljiva-template.html?velikaGnojistarka"><img class="img-thumb" src="slike/velikaGnojistarka-thumbnail.jpg" /> Velika Gnojištarka </a></li>
+  <li><a href="gljiva-template.html?lipka"><img class="img-thumb" src="slike/lipka-thumbnail.jpg" /> Lipka </a></li>
+  <li><a href="gljiva-template.html?sitake"><img class="img-thumb" src="slike/sitake-thumbnail.jpg" /> Šitake </a></li>
+  <li><a href="gljiva-template.html?presnac"><img class="img-thumb" src="slike/presnac-thumbnail.jpg" /> Presnac </a></li>
+  <li><a href="gljiva-template.html?arisevac"><img class="img-thumb" src="slike/arisevac-thumbnail.jpg" /> Ariševac </a></li>
+  <li><a href="gljiva-template.html?borovVrganj"><img class="img-thumb" src="slike/borovVrganj-thumbnail.jpg" /> Borov vrganj </a></li>
+  <li><a href="gljiva-template.html?ispucaliVrganj"><img class="img-thumb" src="slike/ispucaliVrganj-thumbnail.jpg" /> Ispucali Vrganj </a></li>
+  <li><a href="gljiva-template.html?glatkonoska"><img class="img-thumb" src="slike/glatkonoska-thumbnail.jpg" /> Glatkonoška </a></li>
+  <li><a href="gljiva-template.html?lavljaGljiva"><img class="img-thumb" src="slike/lavljaGljiva-thumbnail.jpg" /> Lavlja gljiva </a></li>
+  <li><a href="gljiva-template.html?italijanskiTartuf"><img class="img-thumb" src="slike/italijanskiTartuf-thumbnail.jpg" /> Italijanski tartuf </a></li>
+  <li><a href="gljiva-template.html?crnaGomoljaca"><img class="img-thumb" src="slike/crnaGomoljaca-thumbnail.jpg" /> Crna gomoljača </a></li>
+  <li><a href="gljiva-template.html?crniVrganj"><img class="img-thumb" src="slike/crniVrganj-thumbnail.jpg" /> Crni vrganj </a></li>
+  <li><a href="gljiva-template.html?kovara"><img class="img-thumb" src="slike/kovara-thumbnail.jpg" /> Kovara </a></li>
+  <li><a href="gljiva-template.html?siviJarcic"><img class="img-thumb" src="slike/siviJarcic-thumbnail.jpg" /> Sivi jarčić </a></li>
+  <li><a href="gljiva-template.html?puza"><img class="img-thumb" src="slike/puza-thumbnail.jpg" /> Puza </a></li>
+  <li><a href="gljiva-template.html?zelenaKrasnica"><img class="img-thumb" src="slike/zelenaKrasnica-thumbnail.jpg" /> Zelena krasnica </a></li>
+  <li><a href="gljiva-template.html?sumskaUskocnica"><img class="img-thumb" src="slike/sumskaUskocnica-thumbnail.jpg" /> Šumska uskočnica </a></li>
+  <li><a href="gljiva-template.html?martovka"><img class="img-thumb" src="slike/martovka-thumbnail.jpg" /> Martovka </a></li>
+  <li><a href="gljiva-template.html?vedraPoljarica"><img class="img-thumb" src="slike/vedraPoljarica-thumbnail.jpg" /> Vedra poljarica </a></li>
+  <li><a href="gljiva-template.html?kovrdzavaIglicarka"><img class="img-thumb" src="slike/kovrdzavaIglicarka-thumbnail.jpg" /> Kovrdžava igličarka </a></li>
+  <li><a href="gljiva-template.html?ciganskaPecurka"><img class="img-thumb" src="slike/ciganskaPecurka-thumbnail.jpg" /> Ciganska pečurka </a></li>
+  <li><a href="gljiva-template.html?ljubicastaGljivica"><img class="img-thumb" src="slike/ljubicastaGljivica-thumbnail.jpg" /> Ljubičasta gljivica </a></li>
+  <li><a href="gljiva-template.html?vrsovnica"><img class="img-thumb" src="slike/vrsovnica-thumbnail.jpg" /> Vrsovnica </a></li>
+  <li><a href="gljiva-template.html?mirisnaGrivaca"><img class="img-thumb" src="slike/mirisnaGrivaca-thumbnail.jpg" /> Mirisna grivača </a></li>
+  <li><a href="gljiva-template.html?hladetinkaObicna"><img class="img-thumb" src="slike/hladetinkaObicna-thumbnail.jpg" /> Hladetinka obična </a></li>
+  <li><a href="gljiva-template.html?elasticniHrcic"><img class="img-thumb" src="slike/elasticniHrcic-thumbnail.jpg" /> Elastični hrčić </a></li>
+  <li><a href="gljiva-template.html?pozutica"><img class="img-thumb" src="slike/pozutica-thumbnail.jpg" /> Požutica </a></li>
+  <li><a href="gljiva-template.html?sluzavaKorenika"><img class="img-thumb" src="slike/sluzavaKorenika-thumbnail.jpg" /> Sluzava korenika </a></li>
+  <li><a href="gljiva-template.html?olovastaRudoliska"><img class="img-thumb" src="slike/otrovna-thumbnail.jpg" /> Olovasta rudoliska </a></li>
+  <li><a href="gljiva-template.html?koprenkaZlatka"><img class="img-thumb" src="slike/otrovna-thumbnail.jpg" /> Koprenka zlatka </a></li>
+
+</ul>
+
+<script>
+// ovo je funkcija koja se poziva kada se pilikom unosa u search polje otpusti taster na tastauri
+// funkcija filtrira nazive gljiva u listi
+function filterMashrooms() {
+    // varijable
+    var input, filter, ul, li, a, i, txtValue;
+    // varijabla u kojoj se cuva element polje search
+    input = document.getElementById("searchInput");
+    // varijabla u kojoj se smjesta text iz search inputa i konvertuje ga u velika slova
+    filter = input.value.toUpperCase();
+    // 
+    ul = document.getElementById("myUL");
+    // 
+    li = ul.getElementsByTagName("li");
+    //
+    for (i = 0; i < li.length; i++) {
+      //
+        a = li[i].getElementsByTagName("a")[0];
+        //
+        txtValue = a.textContent || a.innerText;
+        //
+        if (txtValue.trim().toUpperCase().indexOf(filter) == 0) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
